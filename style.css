@@ -1,0 +1,248 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #ff758c,
+        #ff7eb3,
+        #ffb3c6
+    );
+
+    overflow: hidden;
+}
+
+
+/* CARTÃO */
+
+.card {
+    width: 90%;
+    max-width: 500px;
+
+    padding: 40px 30px;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.95);
+
+    border-radius: 25px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.2);
+
+    position: relative;
+
+    z-index: 10;
+
+    animation: aparecer 0.8s ease;
+}
+
+
+/* EMOJIS */
+
+.emoji {
+    font-size: 65px;
+    margin-bottom: 15px;
+
+    animation: flutuar 2s ease-in-out infinite;
+}
+
+
+/* TEXTOS */
+
+h1 {
+    color: #ff4f70;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+p {
+    color: #555;
+    font-size: 17px;
+    line-height: 1.6;
+
+    margin-bottom: 15px;
+}
+
+.subtitulo {
+    color: #888;
+    font-size: 15px;
+}
+
+
+/* BOTÕES */
+
+.botoes {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+
+    margin-top: 30px;
+}
+
+button {
+    border: none;
+    padding: 14px 30px;
+
+    border-radius: 50px;
+
+    font-size: 17px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+button:hover {
+    transform: scale(1.08);
+}
+
+
+/* BOTÃO SIM */
+
+#sim {
+    background: #ff4f70;
+    color: white;
+
+    box-shadow: 0 8px 20px rgba(255, 79, 112, 0.4);
+}
+
+
+/* BOTÃO NÃO */
+
+#nao {
+    background: #eee;
+    color: #555;
+
+    position: relative;
+}
+
+
+/* BOTÃO OFICIAL */
+
+#oficial {
+    margin-top: 20px;
+
+    background: #ff4f70;
+    color: white;
+
+    box-shadow: 0 8px 20px rgba(255, 79, 112, 0.4);
+}
+
+
+/* ESCONDER TELAS */
+
+.escondido {
+    display: none;
+}
+
+
+/* TEXTO FINAL */
+
+.final {
+    margin-top: 25px;
+
+    color: #ff4f70;
+    font-size: 19px;
+}
+
+
+/* CORAÇÕES */
+
+.coracao {
+    position: fixed;
+
+    bottom: -50px;
+
+    font-size: 25px;
+
+    animation: subir 4s linear forwards;
+
+    pointer-events: none;
+
+    z-index: 20;
+}
+
+
+/* ANIMAÇÕES */
+
+@keyframes aparecer {
+
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+@keyframes flutuar {
+
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+}
+
+
+@keyframes subir {
+
+    from {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    to {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+
+}
+
+
+/* CELULAR */
+
+@media (max-width: 500px) {
+
+    .card {
+        padding: 30px 20px;
+    }
+
+    h1 {
+        font-size: 27px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .botoes {
+        gap: 12px;
+    }
+
+    button {
+        padding: 13px 23px;
+        font-size: 15px;
+    }
+
+}
